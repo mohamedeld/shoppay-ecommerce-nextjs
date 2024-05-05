@@ -366,79 +366,91 @@ export const women_dresses = [
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/04/25/16508565378f388bf7e888c2bc94273e9953d22100_thumbnail_600x.webp",
-    price: "",
+    price: "115.2",
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/03/24/164810755649b8cabd855efc56aa7a0a6b422962fe_thumbnail_600x.webp",
-    price: "",
+    price: "25.6",
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/04/11/164964281857e58b1fa7a38f9fff092384f23801f9_thumbnail_600x.webp",
-    price: "",
+    price: "15.2",
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2021/10/15/16342654110372b23c51d76ca165537318bd0828f1_thumbnail_600x.webp",
-    price: "",
+    price: "253.2",
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/02/21/1645432934d3afbf3ceebe3cbeb48019a7e4098f0f_thumbnail_600x.webp",
-    price: "",
+    price: "78.6",
   },
 ];
 export const women_shoes = [
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2021/04/24/16192428449d0a2f9df3090b84cded584abe64c71e_thumbnail_600x.webp",
+      price:77.5
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/06/14/165517428253e93bd6a795d9a97c21810ef1beb61c_thumbnail_600x.webp",
+      price:99.5
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2021/07/28/1627454227e78cf5c9d505d6c45a1c11e6c9b83625_thumbnail_600x.webp",
+      price:45.1
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/05/13/1652449751b1c4055651a96b57ae161885def48c15_thumbnail_600x.webp",
+      price:872
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2021/08/13/1628869751ad4c4dbe554b72f65af9d5c532528f6c_thumbnail_600x.webp",
+      price:45.2
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/04/27/1651047458260c8e9c705b77227c9acdba9104c367_thumbnail_600x.webp",
+      price:23.5
   },
 ];
 export const women_accessories = [
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/05/12/1652333770b01690f4b990751e070cc10e4682b39d_thumbnail_600x.webp",
+      price:120
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2021/10/18/1634549753f940286e6a06890c2a30302bbdbbf665_thumbnail_600x.webp",
+      price:10
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/03/15/1647310895dcbf38181ac1254338a636f64c94384b_thumbnail_600x.webp",
+      price:20
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/05/13/1652449751b1c4055651a96b57ae161885def48c15_thumbnail_600x.webp",
+      price:50
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/06/07/1654567858a331ceb5ce709ed8e53bc50b390d19f9_thumbnail_600x.webp",
+      price:60
   },
   {
     image:
       "https://img.ltwebstatic.com/images3_pi/2022/06/20/16557062656c0432e06a65323afab13e64550c45d6_thumbnail_600x.webp",
+      price:18
   },
 ];
 
@@ -503,74 +515,74 @@ export const gamingSwiper = [
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/H67f1ee99443a46d2a46b0ab346aae2b6Y.jpg",
-    price: "",
+    price: "12",
   },
   {
     name: "",
     image:
       "https://ae01.alicdn.com/kf/H46f7fcad7ab84793a0e69acfc856285d5/desktops-computer-quad-core-gaming-laptops-6GB-Grafiken-computer-desktop-computer-gamer-PC.jpg_Q90.jpg_.webp",
-    price: "",
+    price: "34",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/H3658559222f34898b0d65c78c4eae42fh.jpg",
-    price: "",
+    price: "545",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/H6e2ca40dfd9c4701b0005c9925a5008ff.jpg",
-    price: "",
+    price: "87",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/S510e42af09264c90bc9f4ea9ca535411u.jpg",
-    price: "",
+    price: "90",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/S87eda4e95251435ca81023273f73d8dd1.jpg",
-    price: "",
+    price: "790",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/S510e42af09264c90bc9f4ea9ca535411u.jpg",
-    price: "",
+    price: "120",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/S87eda4e95251435ca81023273f73d8dd1.jpg",
-    price: "",
+    price: "44",
   },
 ];
 export const homeImprovSwiper = [
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/H973c7fd8079f4820b28f7e5b8d7e4bb6s.jpg",
-    price: "",
+    price: "33",
   },
   {
     name: "",
     image: "https://ae01.alicdn.com/kf/S70e0b1be525948e3ae8ca0dbb5672c06Q.jpg",
-    price: "",
+    price: "44"
   },
   {
     name: "",
     image: "https://ae03.alicdn.com/kf/S0e018b6c00ae409781e815c79d44b57bL.jpg",
-    price: "",
+    price: "66",
   },
   {
     name: "",
     image: "https://ae03.alicdn.com/kf/H3c3a10b673554dc3a2957801aac40174z.jpg",
-    price: "",
+    price: "77",
   },
   {
     name: "",
     image: "https://ae03.alicdn.com/kf/Se9ebef1491684e9bbde7f7f97e9fcf78k.jpg",
-    price: "",
+    price: "88",
   },
   {
     name: "",
     image: "https://ae03.alicdn.com/kf/S882fd95abb7b40ac860d4a9fab1df995Y.jpg",
-    price: "",
+    price: "99",
   },
 ];

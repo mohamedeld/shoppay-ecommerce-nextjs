@@ -12,7 +12,7 @@ const nextConfig = {
     prependData:`@import "base.scss";`
   },
   images:{
-    domains: ['avatars.githubusercontent.com','th.bing.com','ae01.alicdn.com','assets.stickpng.com','res.cloudinary.com'],
+    domains: ['avatars.githubusercontent.com','th.bing.com','ae01.alicdn.com','assets.stickpng.com','res.cloudinary.com','img.ltwebstatic.com','ae03.alicdn.com'],
   }
 };
 

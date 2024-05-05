@@ -12,6 +12,7 @@
     "@auth/mongodb-adapter": "^3.0.0",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
+    "dayjs": "^1.11.11",
     "formik": "^2.4.6",
     "googleapis": "^136.0.0",
     "jsonwebtoken": "^9.0.2",

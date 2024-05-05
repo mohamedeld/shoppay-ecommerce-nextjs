@@ -8,6 +8,10 @@ import { getSession, useSession } from "next-auth/react";
 import axios from "axios";
 import { redirect } from "next/navigation";
 import Main from "@/components/home/main";
+import FlashDeals from "@/components/home/flashDeals";
+import Category from "@/components/home/category";
+import { gamingSwiper, homeImprovSwiper, women_accessories, women_dresses, women_shoes, women_swiper } from "@/data/home";
+import ProductSwiper from "@/components/productSwiper";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -28,6 +32,15 @@ export default function Home() {
       <div className={styles.home}>
         <div className={styles.container}>
           <Main/>
+          <FlashDeals/>
+          <div className={styles.home__category}>
+            <Category header="Dresses" products={women_dresses} background="#5a31f4"/>
+            <Category header="Shoes / High Heels" products={women_shoes} background="#3c811f"/>
+            <Category header="Accessories" products={women_accessories} background="#000"/>
+          </div>
+          <ProductSwiper  products={women_swiper}/>
+          <ProductSwiper  products={gamingSwiper}/>
+          <ProductSwiper  products={homeImprovSwiper}/>
         </div>
       </div>
      
