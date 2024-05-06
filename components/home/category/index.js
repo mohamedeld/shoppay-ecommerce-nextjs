@@ -14,7 +14,7 @@ const Category = ({header,products,background}) => {
           products?.map(product=>{
             return (
               <div className={styles.product} key={product.price}>
-                <img src={product?.image} alt="women dresses"/>
+                <img src={product?.image} alt="women dresses" />
               </div>
             )
           })

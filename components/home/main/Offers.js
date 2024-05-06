@@ -29,7 +29,7 @@ export default function Offers() {
           offersAarray?.map(item=>{
             return (
               <SwiperSlide key={item?.price}>
-                <Image src={item?.image} alt="image for offers" layout='fill' objectFit="cover" objectPosition="center" />
+                <Image src={item?.image} alt="image for offers" fill={true} />
                 <span>{item?.price}$</span>
                 <span>-{item?.discount}%</span>
               </SwiperSlide>

@@ -11,6 +11,7 @@ import 'swiper/css/pagination';
 
 // import required modules
 import { Navigation, Pagination } from 'swiper/modules';
+import Image from 'next/image';
 const ProductSwiper = ({ header, products }) => {
   return (
     <div className={styles.wrapper}>
@@ -22,6 +23,27 @@ const ProductSwiper = ({ header, products }) => {
         pagination={{
           clickable: true,
         }}
+        breakpoints={{
+          100:{
+            slidesPerView:1
+          },
+          600:{
+            slidesPerView:2
+          },
+          700:{
+            slidesPerView:3
+          },
+          900:{
+            slidesPerView:4
+          },
+          1200:{
+            slidesPerView:5
+          },
+          1300:{
+            slidesPerView:6
+          },
+
+        }}
         modules={[Navigation]}
         className="productSwiper"
       >
@@ -30,7 +52,8 @@ const ProductSwiper = ({ header, products }) => {
               <SwiperSlide key={product.price}>
             <div className={styles.product} > 
               <div className={styles.product__img}>
-                <img src={product?.image} alt="swiper women address"/></div>
+                <Image src={`${product?.image}`} alt="swiper women address" fill={true}/>
+                </div>
               <div className={styles.product__infos}>
                 <h1>{product?.name.length > 35 ? `${product?.name?.slice(0,35)}`: product?.name}</h1>
                 <span>${product?.price}</span>

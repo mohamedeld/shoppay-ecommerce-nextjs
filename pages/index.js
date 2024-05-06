@@ -12,13 +12,14 @@ import FlashDeals from "@/components/home/flashDeals";
 import Category from "@/components/home/category";
 import { gamingSwiper, homeImprovSwiper, women_accessories, women_dresses, women_shoes, women_swiper } from "@/data/home";
 import ProductSwiper from "@/components/productSwiper";
+import { connectDb } from "@/utils/db";
+import Product from "@/models/productModel";
+import ProductCard from "@/components/productCard";
 
 const inter = Inter({ subsets: ["latin"] });
 
-export default function Home() {
+export default function Home({products}) {
   const {data:session} = useSession();
-
-
             
   return (
     <>
@@ -39,11 +40,32 @@ export default function Home() {
             <Category header="Accessories" products={women_accessories} background="#000"/>
           </div>
           <ProductSwiper  products={women_swiper}/>
-          <ProductSwiper  products={gamingSwiper}/>
-          <ProductSwiper  products={homeImprovSwiper}/>
+          <ProductSwiper  products={gamingSwiper}  header="For Gaming"/>
+          <ProductSwiper  products={homeImprovSwiper}  header="For Improvment"/>
+          <div className={styles.products}>
+            {
+             products?.length > 0 && products?.map(product=>{
+              
+              return (
+                <ProductCard key={product?._id} product={product}/>
+              )
+             })
+            }
+          </div>
         </div>
       </div>
      
     </>
   );
+}
+
+export async function getServerSideProps(){
+  connectDb();
+  const products = await Product.find({}).sort({createdAt:-1}).lean();
+  console.log(products)
+  return {
+    props:{
+      products:JSON.parse(JSON.stringify(products))
+    }
+  }
 }

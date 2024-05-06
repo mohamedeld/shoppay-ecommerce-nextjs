@@ -8,7 +8,7 @@ export default function Card({product}){
 <div className={styles.card}>
       <div className={styles.card__img}>
         <Link href={product.link}>
-          <Image src={product.image} alt="card slide image" layout="fill" objectFit="cover" objectPosition="center" />
+          <Image src={product.image} alt="card slide image" fill={true} />
         </Link>
         <div className={styles.flash}>
           <MdFlashOn />

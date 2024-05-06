@@ -31,8 +31,8 @@ export default function App() {
           [...Array(15).keys()].map(item=>{
             return(
               <SwiperSlide key={item}>
-              <Image src={`/images/swiper/${item+1}.jpg`} layout="fill" objectFit="cover"
-          objectPosition="center" alt="images for slider" />
+              <Image src={`/images/swiper/${item+1}.jpg`} fill={true}
+           alt="images for slider" />
             </SwiperSlide>
             )
           })

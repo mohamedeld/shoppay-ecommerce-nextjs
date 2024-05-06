@@ -97,7 +97,7 @@ const UserMenu = () => {
             {userSwiperArray.map((item) => (
               <SwiperSlide key={item?.image}>
                 <Link href="">
-                  <Image src={item.image} alt="user menu image" layout="fill" objectFit="cover" objectPosition="center" />
+                  <Image src={item.image} alt="user menu image" fill={true} />
                 </Link>
               </SwiperSlide>
             ))}
