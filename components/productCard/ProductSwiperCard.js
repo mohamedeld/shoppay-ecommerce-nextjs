@@ -10,7 +10,7 @@ import 'swiper/css/navigation';
 
 
 // import required modules
-import { Autoplay } from 'swiper/modules';
+import { Autoplay } from "swiper/modules";
 import styles from "./styles.module.scss";
 import Image from 'next/image';
 const ProductSwiperCard = ({ images }) => {
@@ -21,7 +21,7 @@ const ProductSwiperCard = ({ images }) => {
       <Swiper
         ref={swiperRef}
         centeredSlides={true}
-        autoplay={{ delay: 500, stopOnLastSlide: false }}
+        autoplay={{ delay: 500, disableOnInteraction: false }}
         speed={500}
         modules={[Autoplay]}
         className="cardSwiper"

@@ -1,7 +1,8 @@
 import { useEffect, useState } from 'react';
-import styles from './styles.module.scss';
+import styles1 from './styles.module.scss';
 import Link from 'next/link';
 import ProductSwiperCard from './ProductSwiperCard';
+import Image from 'next/image';
 
 const ProductCard = ({product}) => {
   const [active,setActive] = useState(0);
@@ -22,14 +23,51 @@ const ProductCard = ({product}) => {
   },[active])
   
   return (
-    <div className={styles.product}>
-      <div className={styles.product__container}>
-        <Link href={`/product/${product?.slug}?style=${active}`}>
-          <div>
-            <ProductSwiperCard images={images}/>
+    <div className={styles1.product}>
+      <div className={styles1.product__container}>
+        <div>
+          <Link href={`/product/${product?.slug}?style=${active}`}>
+            <div>
+              <ProductSwiperCard images={images}/>
+            </div>
+          </Link>
+          {
+            product?.subProducts[active]?.discount && (
+              <div className={styles1.product__discount}>{product?.subProducts[active]?.discount}</div>
+            )
+          }
+          <div className={styles1.product__infos1}>
+            <h1>{product?.name?.length > 45 ? `${product?.name?.substring(0,45)}...`:`${product?.name}`}</h1>
+            <span>{prices?.length === 1 ? `USD${prices[0]}$`:`USD${prices[0] - prices[prices.length - 1]}$`}</span>
+            <div className={styles1.product__colors}>
+              {
+                styles?.length > 0 && styles?.map((item,index)=>{
+                  return(
+                    item?.image ?(
+                      <Image src={item?.image} key={index} width={20} height={20} className={index === active && styles1.active}  onClick={
+                        ()=>{
+                          setImages(product?.subProducts[index]?.image);
+                          setActive(index)
+                        }
+                      } alt="active image"
+                      />
+                    ):(
+                      <span key={index} style={{backgroundColor:`${item?.color}`}} onClick={
+                        ()=>{
+                          setImages(product?.subProducts[index]?.image);
+                          setActive(index)
+                        }
+                      }>
+                      </span>
+                    )
+                  )
+                })
+              }
+            </div>
           </div>
-        </Link>
+        </div>
       </div>
+
     </div>
   )
 }

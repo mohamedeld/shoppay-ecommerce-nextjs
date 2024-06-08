@@ -52,7 +52,7 @@ const ProductSwiper = ({ header, products }) => {
               <SwiperSlide key={product.price}>
             <div className={styles.product} > 
               <div className={styles.product__img}>
-                <Image src={`${product?.image}`} alt="swiper women address" fill={true}/>
+                <Image src={`${product?.image}`} alt="swiper women address" fill/>
                 </div>
               <div className={styles.product__infos}>
                 <h1>{product?.name.length > 35 ? `${product?.name?.slice(0,35)}`: product?.name}</h1>

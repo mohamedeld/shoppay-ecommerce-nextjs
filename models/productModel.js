@@ -24,7 +24,7 @@ const ProductSchema = new mongoose.Schema({
     ref:'Category',
     required:[true,'product should have a category']
   },
-  category:[{
+  subCategory:[{
     type:mongoose.Schema.Types.ObjectId,
     ref:'SubCategory',
   }], 

@@ -13,6 +13,8 @@
     }
   }
   .products {
+    position: relative;
+    overflow: hidden;
     margin-top: 2rem;
     display: flex;
     align-items: center;
