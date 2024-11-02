@@ -60,6 +60,7 @@ const ProductSchema = new mongoose.Schema({
     default:0
   },
   subProducts:[{
+    sku:String,
     images:[],
     descriptionImages:[],
     color:{

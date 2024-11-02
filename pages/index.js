@@ -12,7 +12,7 @@ import FlashDeals from "@/components/home/flashDeals";
 import Category from "@/components/home/category";
 import { gamingSwiper, homeImprovSwiper, women_accessories, women_dresses, women_shoes, women_swiper } from "@/data/home";
 import ProductSwiper from "@/components/productSwiper";
-import { connectDb } from "@/utils/db";
+import { connectDb, disconnectDb } from "@/utils/db";
 import Product from "@/models/productModel";
 import ProductCard from "@/components/productCard";
 
@@ -62,7 +62,7 @@ export default function Home({products}) {
 export async function getServerSideProps(){
   connectDb();
   const products = await Product.find({}).sort({createdAt:-1}).lean();
-  console.log(products)
+  disconnectDb();
   return {
     props:{
       products:JSON.parse(JSON.stringify(products))
