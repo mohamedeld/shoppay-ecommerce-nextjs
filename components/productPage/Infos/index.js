@@ -2,12 +2,12 @@ import { Button, Rating } from "@mui/material";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
 import { useState } from "react";
+import Link from "next/link";
 
 
 const Info = ({product}) => {
   const router = useRouter();
   const [size,setSize] = useState(router?.query?.size);
-
 
   return (
     <div className={styles.info}>
@@ -59,6 +59,17 @@ const Info = ({product}) => {
             size ? product?.quantity : product?.sizes?.reduce((start,next)=> start + next?.qty,0)
           } pieces available
         </span>
+        <div className={styles.infos__sizes}>
+          <h4>Select a size</h4>
+          <div className={styles.infos__sizes_wrap}></div>
+          {product?.sizes?.map((size,index)=>{
+            return (
+              <Link href={`/product/${product?.slug}?style=${router?.query?.style}&size=${index}`} key={size?._id}>
+                <div className={`${styles.infos__sizes_size} ${index === router?.query?.size && styles.active_size}`} onClick={()=> setSize(size?.si)}>{size?.size}</div>
+              </Link>
+            )
+          })}
+        </div>
       </div>
     </div>
   )
