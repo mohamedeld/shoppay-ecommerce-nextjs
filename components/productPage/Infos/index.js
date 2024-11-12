@@ -34,7 +34,7 @@ const Info = ({product}) => {
         </div>
         <div className={styles.infos__price}>
           {
-            product?.priceRange ? (
+            !size ? (
               <h2>{product?.priceRange}</h2>
             ):(
               <h1>{product?.price}</h1>
@@ -43,7 +43,7 @@ const Info = ({product}) => {
           {
             product.discount > 0 ? (
               <h3>
-                <span>{product?.priceBefore}</span>
+               {size&& <span>{product?.priceBefore}</span>}
                 <span>(-{product?.discount}%)</span>
               </h3>
             ):(<></>)
@@ -56,12 +56,12 @@ const Info = ({product}) => {
         </span>
         <span>
           {
-            size ? product?.quantity : product?.sizes?.reduce((start,next)=> start + next?.qty,0)
+            !size ? product?.quantity : product?.sizes?.reduce((start,next)=> start + next?.qty,0)
           } pieces available
         </span>
         <div className={styles.infos__sizes}>
           <h4>Select a size</h4>
-          <div className={styles.infos__sizes_wrap}></div>
+          <div className={styles.infos__sizes_wrap}>
           {product?.sizes?.map((size,index)=>{
             return (
               <Link href={`/product/${product?.slug}?style=${router?.query?.style}&size=${index}`} key={size?._id}>
@@ -69,6 +69,7 @@ const Info = ({product}) => {
               </Link>
             )
           })}
+          </div>
         </div>
       </div>
     </div>
