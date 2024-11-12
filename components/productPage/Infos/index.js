@@ -65,7 +65,7 @@ const Info = ({product}) => {
           {product?.sizes?.map((size,index)=>{
             return (
               <Link href={`/product/${product?.slug}?style=${router?.query?.style}&size=${index}`} key={size?._id}>
-                <div className={`${styles.infos__sizes_size} ${index === router?.query?.size && styles.active_size}`} onClick={()=> setSize(size?.si)}>{size?.size}</div>
+                <div className={`${styles.infos__sizes_size} ${index === router?.query?.size && styles.active_size}`} onClick={()=> setSize(size?.size)}>{size?.size}</div>
               </Link>
             )
           })}
