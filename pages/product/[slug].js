@@ -6,6 +6,7 @@ import styles from "../../styles/product.module.scss"
 import Category from "@/models/categoryModel";
 import MainSwiper from "@/components/productPage/MainSwiper";
 import { useState } from "react";
+import Info from "@/components/productPage/Infos";
 const ProductDetail = ({ product }) => {
   const [activeImage,setActiveImage] = useState("");
   if (!product) {
@@ -28,6 +29,7 @@ const ProductDetail = ({ product }) => {
           </div>
           <div className={styles.product__main}>
             <MainSwiper images={product?.images} activeImage={activeImage}/>
+            <Info product={product}/>
           </div>
         </div>
       </div>
