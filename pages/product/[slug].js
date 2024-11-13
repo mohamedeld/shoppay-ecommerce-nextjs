@@ -5,14 +5,20 @@ import Head from "next/head";
 import styles from "../../styles/product.module.scss"
 import Category from "@/models/categoryModel";
 import MainSwiper from "@/components/productPage/MainSwiper";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 import Info from "@/components/productPage/Infos";
 const ProductDetail = ({ product }) => {
   const [activeImage,setActiveImage] = useState("");
+  const handleChangeImage = useCallback((img)=>{
+    setActiveImage(img);
+  },[])
+
   if (!product) {
     toast.error("product not found");
     return;
   }
+
+  
 
   return (
     <>
@@ -29,7 +35,7 @@ const ProductDetail = ({ product }) => {
           </div>
           <div className={styles.product__main}>
             <MainSwiper images={product?.images} activeImage={activeImage}/>
-            <Info product={product}/>
+            <Info product={product} handleChangeImage={handleChangeImage}/>
           </div>
         </div>
       </div>

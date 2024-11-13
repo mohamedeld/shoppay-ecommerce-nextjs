@@ -1,13 +1,36 @@
 import { Button, Rating } from "@mui/material";
 import styles from "./styles.module.scss";
 import { useRouter } from "next/router";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import {TbMinus, TbPlus} from "react-icons/tb"
+import { BsHandbagFill, BsHeart } from "react-icons/bs";
+import Share from "../share";
 
-
-const Info = ({product}) => {
+const Info = ({product,handleChangeImage}) => {
   const router = useRouter();
   const [size,setSize] = useState(router?.query?.size);
+  const [qty,setQty] = useState(1);
+
+  useEffect(()=>{
+    setSize("");
+    setQty(1);
+  },[router?.query?.style])
+
+  useEffect(()=>{
+    if(qty > product?.quantity){
+      setQty(product?.quantity)
+    }
+  },[router?.query?.size])
+
+  const handleDecrease = ()=>{
+    qty > 1 && setQty(prev=> prev - 1)
+  }
+
+  const handleIncrease = ()=>{
+    qty < product?.quantity && setQty(prev=> prev + 1)
+  }
 
   return (
     <div className={styles.info}>
@@ -71,6 +94,41 @@ const Info = ({product}) => {
           })}
           </div>
         </div>
+        <div className={styles.infos__colors}>
+          {
+            product?.colors?.length > 0 ? product?.colors?.map((color,index)=>{
+              return(
+                <span key={color?.image} className={`${index === router?.query?.style ? styles?.active_color : ''}`} onMouseEnter={()=>handleChangeImage(product?.subProducts[index]?.images[0]?.url)} onMouseLeave={()=>handleChangeImage("")} >
+                  <Link href={`/product/${product?.slug}?style=${index}`}>
+                    <Image width={50} height={50} objectFit="cover" alt={`image from product color`} src={color?.image}/>
+                  </Link>
+                </span>
+              )
+            }):(
+              <></>
+            )
+          }
+        </div>
+        <div className={styles.infos__qty}>
+          <button onClick={handleDecrease}>
+            <TbMinus/>
+          </button>
+          <span>{qty}</span>
+          <button onClick={handleIncrease}>
+            <TbPlus/>
+          </button>
+        </div>
+        <div className={styles.infos__actions}>
+          <button disabled={product?.quantity < 1}>
+            <BsHandbagFill/>
+            <b>Add To Cart</b>
+          </button>
+          <button>
+            <BsHeart/>
+            <b>Wishlist</b>
+          </button>
+        </div>
+        <Share/>
       </div>
     </div>
   )
