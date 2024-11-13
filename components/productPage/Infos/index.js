@@ -8,6 +8,7 @@ import {TbMinus, TbPlus} from "react-icons/tb"
 import { BsHandbagFill, BsHeart } from "react-icons/bs";
 import Share from "../share";
 import Accordins from "../Accordin";
+import SimiliarSwiper from "../SimiliarSwiper";
 
 const Info = ({product,handleChangeImage}) => {
   const router = useRouter();
@@ -131,6 +132,7 @@ const Info = ({product,handleChangeImage}) => {
         </div>
         <Share/>
         <Accordins details={[product?.description ,...product?.details]}/>
+        <SimiliarSwiper images={product?.images}/>
       </div>
     </div>
   )
