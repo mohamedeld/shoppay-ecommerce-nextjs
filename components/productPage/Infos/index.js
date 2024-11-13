@@ -7,6 +7,7 @@ import Image from "next/image";
 import {TbMinus, TbPlus} from "react-icons/tb"
 import { BsHandbagFill, BsHeart } from "react-icons/bs";
 import Share from "../share";
+import Accordins from "../Accordin";
 
 const Info = ({product,handleChangeImage}) => {
   const router = useRouter();
@@ -129,6 +130,7 @@ const Info = ({product,handleChangeImage}) => {
           </button>
         </div>
         <Share/>
+        <Accordins details={[product?.description ,...product?.details]}/>
       </div>
     </div>
   )
